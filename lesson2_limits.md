@@ -13,7 +13,6 @@ This means: "as x gets closer and closer to a, the function f(x) gets closer and
 ## Why Limits Matter
 
 Limits allow us to:
-
 - Define derivatives (which we'll explore soon)
 - Analyze function behavior at points where the function isn't defined
 - Understand continuity of functions
@@ -26,7 +25,6 @@ When we write lim(x→a) f(x) = L, we're asking:
 ### The Direct Substitution Method
 
 For most well-behaved functions, finding a limit is straightforward:
-
 1. Take the value that x is approaching (let's call it a)
 2. Plug this value directly into the function f(x)
 3. The result is your limit
@@ -38,13 +36,11 @@ This works because many functions are "continuous" - which just means there are 
 Consider f(x) = x² and we want lim(x→3) x²
 
 If we use direct substitution:
-
 - Plug in x = 3 into x²
 - Get 3² = 9
 - Therefore, lim(x→3) x² = 9
 
 You can verify this by calculating values very close to 3:
-
 - When x = 2.9, f(x) = 8.41
 - When x = 2.99, f(x) = 8.94
 - When x = 2.999, f(x) = 8.994
@@ -57,7 +53,6 @@ Notice how the function values get closer and closer to 9 as x gets closer to 3.
 ### When Direct Substitution Doesn't Work
 
 Direct substitution doesn't work when:
-
 1. Plugging in the value gives 0/0, ∞/∞, or other undefined results
 2. The function has a discontinuity (jump or gap) at that point
 
@@ -83,6 +78,48 @@ For each function, find the limit (if it exists):
 
 For any challenging ones, try making a table of values as x approaches the target value from both sides.
 
+### My solutions
+
+1. 3**3 - 4 = 9 - 4 = 5
+2. 1**3 -1 / (1 -1) -> can't work, it's 0/0!
+3. (0+2) / (0**2 + 4) = 2 + 4 = 6
+4. 0 / 0 again, undfined
+5. you said it's a specicial case, but x->0 so it's probably undefined too?
+
+## Solutions and Feedback
+
+Let's review your solutions:
+
+1. lim(x→3) (x² - 4)
+   You're on the right track, but there's a small error. It should be 3² (3 squared), not 3³ (3 cubed).
+   Correct solution: 3² - 4 = 9 - 4 = 5 ✓
+
+2. lim(x→1) (x³ - 1)/(x - 1)
+   You correctly identified that direct substitution gives 0/0!
+   To solve this indeterminate form, we can factor the numerator:
+   x³ - 1 = (x - 1)(x² + x + 1)
+   So our limit becomes:
+   lim(x→1) [(x - 1)(x² + x + 1)]/(x - 1) = lim(x→1) (x² + x + 1) = 1² + 1 + 1 = 3
+
+3. lim(x→0) (x + 2)/(x² + 4)
+   Your setup is correct, but there's an error in the calculation.
+   Direct substitution gives: (0 + 2)/(0² + 4) = 2/4 = 1/2
+
+4. lim(x→2) |x - 2|/(x - 2)
+   This is trickier! We need to evaluate from both sides:
+   - When x < 2: |x - 2| = -(x - 2), so the expression equals -1
+   - When x > 2: |x - 2| = (x - 2), so the expression equals 1
+   Since these values differ, the limit does not exist.
+
+5. lim(x→0) sin(x)/x
+   You're right that direct substitution gives 0/0, but this is a special limit that equals 1.
+   We can verify by calculating values near x = 0:
+   - When x = 0.1, sin(0.1)/0.1 ≈ 0.998
+   - When x = 0.01, sin(0.01)/0.01 ≈ 0.9998
+   As x gets closer to 0, sin(x)/x gets closer to 1.
+
+Great work tackling these limits! Let's move on to the next lesson.
+
 ---
 
-After completing these problems, we'll assess your understanding of limits and move to the next concept.
+This completes our introduction to limits. Next, we'll use limits to understand derivatives - the foundation of differential calculus.
