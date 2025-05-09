@@ -13,6 +13,7 @@ This means: "as x gets closer and closer to a, the function f(x) gets closer and
 ## Why Limits Matter
 
 Limits allow us to:
+
 - Define derivatives (which we'll explore soon)
 - Analyze function behavior at points where the function isn't defined
 - Understand continuity of functions
@@ -25,6 +26,7 @@ When we write lim(x→a) f(x) = L, we're asking:
 ### The Direct Substitution Method
 
 For most well-behaved functions, finding a limit is straightforward:
+
 1. Take the value that x is approaching (let's call it a)
 2. Plug this value directly into the function f(x)
 3. The result is your limit
@@ -36,11 +38,13 @@ This works because many functions are "continuous" - which just means there are 
 Consider f(x) = x² and we want lim(x→3) x²
 
 If we use direct substitution:
+
 - Plug in x = 3 into x²
 - Get 3² = 9
 - Therefore, lim(x→3) x² = 9
 
 You can verify this by calculating values very close to 3:
+
 - When x = 2.9, f(x) = 8.41
 - When x = 2.99, f(x) = 8.94
 - When x = 2.999, f(x) = 8.994
@@ -53,6 +57,7 @@ Notice how the function values get closer and closer to 9 as x gets closer to 3.
 ### When Direct Substitution Doesn't Work
 
 Direct substitution doesn't work when:
+
 1. Plugging in the value gives 0/0, ∞/∞, or other undefined results
 2. The function has a discontinuity (jump or gap) at that point
 
