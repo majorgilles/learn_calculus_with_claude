@@ -17,7 +17,7 @@ In everyday terms:
 The derivative measures:
 
 - Rate of change
-- Slope at a point
+- Steepness at a point
 - How sensitive one value is to changes in another
 
 ## The Two Common Notations
@@ -33,19 +33,42 @@ Both mean the same thing: the rate at which f(x) changes as x changes.
 
 The formal definition uses limits:
 
-f'(x) = lim(h→0) [f(x+h) - f(x)]/h
+f'(x) = lim(h→0) (f(x+h) - f(x))/h
 
 What this really means:
 
 1. Take a point x on your function
 2. Take another point a tiny step (h) away: (x+h)
-3. Calculate the slope of the line between these points: [f(x+h) - f(x)]/h
+3. Calculate the steepness between these points: (f(x+h) - f(x))/h
 4. Make h smaller and smaller, approaching zero
-5. The slope approaches the exact slope at point x
+5. The final steepness you get (as h gets infinitely small) is the derivative
+
+Note: The parentheses ( ) in the formula above serve the same purpose as square brackets [ ] - they simply group terms together.
+
+## A Concrete Example Without Math Notation
+
+Imagine tracking temperature throughout the day:
+
+- At 1:00 PM: 70°F
+- At 1:10 PM: 71°F
+
+To find the rate of change:
+
+- Temperature change: 71 - 70 = 1°F
+- Time change: 10 minutes
+- Rate of change: 1°F ÷ 10 minutes = 0.1°F per minute
+
+This gives the average rate over 10 minutes. For the instantaneous rate at exactly 1:00 PM, we'd make the time interval smaller and smaller:
+
+- Check temperature at 1:01 PM (1 minute later)
+- Then at 1:00:10 PM (10 seconds later)
+- Then at 1:00:01 PM (1 second later)
+
+As this time gap approaches zero, we get the instantaneous rate at exactly 1:00 PM.
 
 ## Visual Understanding with a Picture
 
-Imagine you have a curved line (a function). If you zoom in closer and closer to a single point on that curve, eventually it starts to look like a straight line. The slope of that straight line is the derivative at that point.
+Imagine you have a curved line (a function). If you zoom in closer and closer to a single point on that curve, eventually it starts to look like a straight line. The steepness of that straight line is the derivative at that point.
 
 ![Derivative as tangent line](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Tangent_to_a_curve.svg/400px-Tangent_to_a_curve.svg.png)
 
@@ -61,22 +84,22 @@ Imagine you have a curved line (a function). If you zoom in closer and closer to
 Let's find the derivative of f(x) = x² using the definition:
 
 1. Start with the definition:
-   f'(x) = lim(h→0) [f(x+h) - f(x)]/h
+   f'(x) = lim(h→0) (f(x+h) - f(x))/h
 
 2. Replace f(x) with x² and f(x+h) with (x+h)²:
-   f'(x) = lim(h→0) [(x+h)² - x²]/h
+   f'(x) = lim(h→0) ((x+h)² - x²)/h
 
 3. Expand (x+h)²:
-   f'(x) = lim(h→0) [x² + 2xh + h² - x²]/h
+   f'(x) = lim(h→0) (x² + 2xh + h² - x²)/h
 
 4. Cancel out x² terms:
-   f'(x) = lim(h→0) [2xh + h²]/h
+   f'(x) = lim(h→0) (2xh + h²)/h
 
 5. Factor out h:
-   f'(x) = lim(h→0) [h(2x + h)]/h
+   f'(x) = lim(h→0) h(2x + h)/h
 
 6. Cancel h (note: we can do this because h≠0 before we take the limit):
-   f'(x) = lim(h→0) [2x + h]
+   f'(x) = lim(h→0) (2x + h)
 
 7. Apply the limit (as h approaches 0):
    f'(x) = 2x
@@ -88,16 +111,16 @@ So the derivative of x² is 2x!
 For f(x) = 3x, let's find f'(x):
 
 1. Apply the definition:
-   f'(x) = lim(h→0) [(3(x+h)) - 3x]/h
+   f'(x) = lim(h→0) ((3(x+h)) - 3x)/h
 
 2. Simplify:
-   f'(x) = lim(h→0) [3x + 3h - 3x]/h
+   f'(x) = lim(h→0) (3x + 3h - 3x)/h
 
 3. Cancel terms:
-   f'(x) = lim(h→0) [3h]/h
+   f'(x) = lim(h→0) (3h)/h
 
 4. Simplify:
-   f'(x) = lim(h→0) [3] = 3
+   f'(x) = lim(h→0) (3) = 3
 
 So the derivative of 3x is just 3!
 
