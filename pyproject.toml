@@ -1,46 +1,175 @@
-[build-system]
-requires = ["uv", "hatchling"]
-build-backend = "hatchling.build"
-
 [project]
-name = "learn-calculus-with-claude"
+name = "code_cademy_nlp"
 version = "0.1.0"
-description = "Interactive calculus lessons with Jupyter notebooks"
-authors = [
-    {name = "Claude AI", email = "noreply@anthropic.com"},
-]
+description = "Gilles Major Repo for NLP experiments"
 readme = "README.md"
-requires-python = ">=3.8"
-license = {text = "MIT"}
+requires-python = ">=3.12"
+authors = [
+    {name = "Gilles Major"}
+]
 dependencies = [
-    "notebook>=6.4.0",
-    "jupyterlab>=3.0.0",
-    "numpy>=1.20.0",
-    "matplotlib>=3.4.0",
-    "sympy>=1.8.0",
-    "ipywidgets>=7.6.0",
+    "matplotlib>=3.10.1",
+    "nltk>=3.9.1",
+    "notebook>=7.2.2",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "pydantic>=2.10.4",
+    "seaborn>=0.13.2",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.14.1",
+    "spacy>=3.8.5; platform_system != 'Windows'",
+    "tiktoken>=0.9.0",
+    "torch>=2.6.0",
+    "types-decorator>=5.2.0.20250324",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "black>=23.0.0",
-    "isort>=5.10.0",
-    "ruff>=0.0.190",
+    "ipdb>=0.13.13",
+    "mypy==1.12.1",
+    "pre-commit==3.8.0",
+    "pytest==8.3.4",
+    "types-Deprecated==1.2.15.20241117",
+    "types-requests==2.31.0.6",
+    "types-python-dateutil>=2.9.0.20241003",
+    "ruff==0.8.3",
 ]
 
-[tool.black]
-line-length = 88
-target-version = ["py38"]
-
-[tool.isort]
-profile = "black"
-line_length = 88
-
-[tool.ruff]
-line-length = 88
-target-version = "py38"
-select = ["E", "F", "B", "I"]
-ignore = []
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["."]
+packages = ["src"]
+
+[tool.mypy]
+ignore_missing_imports = true
+check_untyped_defs = true
+files = [
+    "*"
+]
+plugins = ["pydantic.mypy"]
+strict_optional = true
+
+[tool.ruff]
+fix = true
+line-length = 120
+extend-exclude = [
+    ".circleci",
+    ".github",
+    ".pytest_cache",
+    ".run",
+    ".vscode",
+    "debug.py",
+    "devops",
+    "docs",
+    "local_scripts",
+    "templates",
+    "vulture_whitelist.py",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = 120
+
+[tool.ruff.lint]
+extend-select = [
+    "A", # flake8-builtins
+    "ANN", # flake8-annotations
+    "B", # bugbear
+    "C4", # flake8-comprehensions
+    "C90", # mccabe
+    "COM", # flake8-commas
+    "D", # pydocstyle
+    "DJ", # flake8-django
+    "E", # pycodestyle
+    "FA", # flake8-future-annotations
+    "I", # isort
+    "ICN", # flake8-import-conventions
+    "INP", # flake8-no-pep420
+    "INT", # flake8-gettext
+    "ISC", # flake8-implicit-str-concat
+    "LOG", # flake8-logging
+    "PERF", # perflint
+    "PIE", # flake8-pie
+    "PTH", # flake8-pathlib
+    "PL", # pylint
+    "Q", # flake8-quotes
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "S101", # flake8-assert
+    "SIM", # flake8-simplify
+    "TID", # flake8-tidy-imports
+    "TCH", # flake8-type-checking
+    "UP", # pyupgrade
+    "W", # pycodestyle
+]
+ignore = [
+    "ANN002", # Missing type annotation for *args
+    "ANN003", # Missing type annotation for **kwargs
+    "COM812", # missing trailing comma
+    "D104", # Missing docstring in public package. To be left inactive as it is not useful for the code base.
+    "D203", # 1 blank line required before class docstring. Not part of Google convention.
+    "D204", # 1 blank line required after class docstring. Not part of Google convention.
+    "D213", # Multi-line docstring summary should start at the second line. Not part of Google convention.
+    "D215", # Section underline is over-indented. Not part of Google convention.
+    "D400", # First line should end with a period. Not part of Google convention.
+    "D404", # First word of the docstring should not be "This". Not part of Google convention.
+    "D406", # Section name should end with a newline. Not part of Google convention.
+    "D407", # Missing dashed underline after section. Not part of Google convention.
+    "D408", # Section underline should be in the line following the section's name ("{name}"). Not part of Google convention.
+    "D409", # Section underline should match the length of its name. Not part of Google convention.
+    "DJ001", # nullable char field
+    "ISC001", # Implicit string concatenation. May cause conflicts when used with the formatter
+    "PIE796", # enum duplicate value
+]
+
+[tool.ruff.lint.per-file-ignores]
+"vulture_whitelist.py" = ["B018", "E501", "F821", "D100"]
+"local_scripts/**" = ["E402", "D100"]
+"test/**" = [
+    "ANN001",
+    "ANN002",
+    "ANN003",
+    "ANN102",
+    "ANN201",
+    "ANN202",
+    "ANN204",
+    "ANN205",
+    "ANN206",
+    "ANN401",
+    "C901",
+    "D100",
+    "D101",
+    "D103",
+    "D105",
+    "D106",
+    "D107",
+    "E501",
+    "PLR0913",
+    "PLR0915",
+    "PLR2004",
+    "S101",
+]
+"test/integration/**" = [
+    "PLW0603",
+]
+
+[tool.ruff.lint.flake8-type-checking]
+runtime-evaluated-base-classes = ["pydantic.BaseModel"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10 # Flag errors (`C901`) whenever the complexity level exceeds max-complexity. (default 10)
+
+[tool.ruff.lint.pylint]
+max-args = 6 # Maximum number of arguments allowed for a function or method definition (see: PLR0913). (default 5)
+max-branches = 12 #Maximum number of branches allowed for a function or method body (see: PLR0912). (default 12)
+max-returns = 6 # Maximum number of return statements allowed for a function or method body (see PLR0911). (default 6)
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"  # Accepts: "google", "numpy", or "pep257".
+ignore-decorators = ["pydantic.validator"]
