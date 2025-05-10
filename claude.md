@@ -26,6 +26,7 @@ When creating lesson content, use a mix of:
    - Add typings to functions
    - Add docstrings
    - Don't include spaces in blank lines
+   - Use "plt.style.use("seaborn-v0_8")" for styling
    - Demonstrate mathematical concepts through Python code
    - Include numerical approximations alongside analytical solutions
    - Show real-world applications of the concepts
