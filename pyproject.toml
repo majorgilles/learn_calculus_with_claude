@@ -1,0 +1,43 @@
+[build-system]
+requires = ["uv", "hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "learn-calculus-with-claude"
+version = "0.1.0"
+description = "Interactive calculus lessons with Jupyter notebooks"
+authors = [
+    {name = "Claude AI", email = "noreply@anthropic.com"},
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+dependencies = [
+    "notebook>=6.4.0",
+    "jupyterlab>=3.0.0",
+    "numpy>=1.20.0",
+    "matplotlib>=3.4.0",
+    "sympy>=1.8.0",
+    "ipywidgets>=7.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0.0",
+    "isort>=5.10.0",
+    "ruff>=0.0.190",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+select = ["E", "F", "B", "I"]
+ignore = []
