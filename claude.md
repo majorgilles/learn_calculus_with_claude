@@ -22,6 +22,10 @@ When creating lesson content, use a mix of:
    - Create interactive elements when possible using ipywidgets
 
 3. **Code Examples**:
+   - Use double quotes (") for any string, not single strings
+   - Add typings to functions
+   - Add docstrings
+   - Don't include spaces in blank lines
    - Demonstrate mathematical concepts through Python code
    - Include numerical approximations alongside analytical solutions
    - Show real-world applications of the concepts
