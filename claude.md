@@ -26,7 +26,6 @@ When creating lesson content, use a mix of:
    - Add typings to functions
    - Add docstrings
    - Don't include spaces in blank lines
-   - Use "plt.style.use("seaborn-v0_8")" for styling
    - Demonstrate mathematical concepts through Python code
    - Include numerical approximations alongside analytical solutions
    - Show real-world applications of the concepts
@@ -52,6 +51,6 @@ If the student's grade is less than 80%:
 ## Technical Guidelines for Notebooks
 
 - Ensure all code cells are runnable
-- Use 'default' matplotlib style instead of 'seaborn-whitegrid'
 - Include proper error handling in code examples
+- Use "plt.style.use("seaborn-v0_8")" for styling
 - Test all code before including it in lessons
